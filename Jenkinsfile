@@ -13,7 +13,7 @@ pipeline {
         stage("build jar") {
             steps {
                 script {
-                    echo "building the application"
+                    echo "building the java app"
                     sh 'mvn package'
                     
                 }
