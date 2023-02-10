@@ -24,7 +24,7 @@ pipeline {
                 script {
                     echo "building the docker image..."
                     //gv.buildImage()
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-pm310', passwordVariable: 'PASSWORD', usernameVarialbe: 'USERNAME')]){
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-pm310', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
                         sh 'docker build -t pm310/demo-app:jma-2.0 .'
                         sh 'docker login -u $USERNAME -p $PASSWORD'
                         sh 'docker push pm310/demo-app:jma-2.0'
